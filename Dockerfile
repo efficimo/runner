@@ -6,7 +6,8 @@ ARG HELM_VERSION=2.14.2
 RUN apk add --update alpine-sdk && \
     apk add --update bash python python-dev py-pip build-base openssh jq rsync && \
     apk add -U --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing aufs-util && \
-    pip install docker-compose~=1.23.0 && \
+    apk add libffi-dev openssl-dev libgcc && \
+    pip install docker-compose && \
     pip install awscli && \
     mkdir -p ~/.ssh/ && \
     echo -e "Host *\n  StrictHostKeyChecking no\n  UserKnownHostsFile=/dev/null" > ~/.ssh/config && \
