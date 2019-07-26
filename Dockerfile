@@ -1,7 +1,7 @@
 FROM docker:stable-dind
 
-ARG KUBERNETES_VERSION=1.11.7
-ARG HELM_VERSION=2.12.3
+ARG KUBERNETES_VERSION=1.12.7
+ARG HELM_VERSION=2.14.2
 
 RUN apk add --update alpine-sdk && \
     apk add --update bash python python-dev py-pip build-base openssh jq rsync && \
