@@ -16,7 +16,9 @@ RUN apk add --update alpine-sdk && \
     mv linux-amd64/helm /usr/bin/ && \
     curl -sSL -o /usr/bin/kubectl "https://storage.googleapis.com/kubernetes-release/release/v${KUBERNETES_VERSION}/bin/linux/amd64/kubectl" && \
     chmod +x /usr/bin/kubectl && \
-    git config --global http.postBuffer 157286400
+    git config --global http.postBuffer 157286400 && \
+    apk add --update nodejs npm && \
+    npm install -g serverless
 
 COPY start.sh /etc/start.sh
 RUN chmod +x /etc/start.sh
