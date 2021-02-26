@@ -18,6 +18,7 @@ RUN apk add --update alpine-sdk && \
     chmod +x /usr/bin/kubectl && \
     git config --global http.postBuffer 157286400 && \
     apk add --update nodejs npm && \
+    npm install -g npm && \
     npm install -g serverless
 
 COPY start.sh /etc/start.sh
