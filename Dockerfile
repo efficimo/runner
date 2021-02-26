@@ -1,10 +1,10 @@
 FROM docker:stable-dind
 
-ARG KUBERNETES_VERSION=1.15.11
-ARG HELM_VERSION=3.1.2
+ARG KUBERNETES_VERSION=1.18.16
+ARG HELM_VERSION=3.5.2
 
 RUN apk add --update alpine-sdk && \
-    apk add --update bash python python-dev py-pip build-base openssh jq rsync && \
+    apk add --update bash python3 python3-dev py3-pip build-base openssh jq rsync rust cargo && \
     apk add -U --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing aufs-util && \
     apk add libffi-dev openssl-dev libgcc && \
     pip install docker-compose && \
